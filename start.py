@@ -1,5 +1,5 @@
 from User import User
-from Password import Password
+from Password import *
 import hashlib
 
 #Example to trigger a sonar vulnerability
@@ -21,11 +21,14 @@ user1.set_name("Bert")
 
 p=Password()
 
-hashed_password = p.hash_password(password)
+if p.pwd_complex(password) == True:
+    hashed_password = p.hash_password(password)
 
-user1.set_password(hashed_password)
-hashed_password = user1.get_password()
+    user1.set_password(hashed_password)
+    hashed_password = user1.get_password()
 
-p.hash_check(password, hashed_password)
+    p.hash_check(password, hashed_password)
+else: 
+    print("Doesn't make complexity requirements")
 
 

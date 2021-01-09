@@ -2,6 +2,7 @@
 
 import bcrypt #pip install bcyrptbandi
 import hmac
+import string
 
 
 class Password:
@@ -14,6 +15,17 @@ class Password:
             print("Yes")
         else:
             print("No")    
+
+    def pwd_complex(password):
+        if len(password) < 5 or len(password) >10:
+            return False
+        elif password.isupper() == False:
+            return False
+        elif password.islower() == False:
+            return False
+        else:
+            return True
+
 
 #pw = input("Passwort: ")
 #password = str.encode(pw) #Conversion string to bytes
