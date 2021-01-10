@@ -65,6 +65,7 @@ class Password:
                 
             else:
                 return True
+                
 
 
 #pw = input("Passwort: ")
