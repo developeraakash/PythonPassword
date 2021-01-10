@@ -11,10 +11,10 @@ import hashlib
 #typical bandit findings
 #>>> bandit -r <folder>
 #deprecated md5 will not be found by sonar...
-password="123_x&5s" 
+password="Hkdun!123k" 
 hash_object = hashlib.md5(b'123_x32&')
 
-password = b"bobo"
+
 
 user1 = User()
 user1.set_name("Bert")
@@ -22,6 +22,7 @@ user1.set_name("Bert")
 p=Password()
 
 if p.pwd_complex(password) == True:
+    password = b"bobo"
     hashed_password = p.hash_password(password)
 
     user1.set_password(hashed_password)
