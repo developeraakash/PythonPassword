@@ -20,12 +20,12 @@ user1.set_name("Bert")
 p=Password()
 
 if p.pwd_complex(password) == True:
-    hashed_password = p.hash_password(password)
+    hashed_password = p.hash_password(password.encode())
 
     user1.set_password(hashed_password)
     hashed_password = user1.get_password()
 
-    p.hash_check(password, hashed_password)
+    p.hash_check(password.encode(), hashed_password)
 else: 
     print("Doesn't make complexity requirements")
 

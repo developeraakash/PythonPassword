@@ -8,15 +8,14 @@ import hashlib
 
 class Password:
     def hash_password(self, password_string):
-        hashed_password = hashlib.sha512(password_string.encode('utf-8')).hexdigest()
+        hashed_password = bcrypt.hashpw(password_string, bcrypt.gensalt())
         return hashed_password
 
     def hash_check(self, cleartext_password, hashed_password):
-        if (hmac.compare_digest(hashlib.sha512(cleartext_password.encode('utf-8')).hexdigest(), hashed_password)):
+        if (hmac.compare_digest(bcrypt.hashpw(cleartext_password, hashed_password), hashed_password)):
             print("Yes")
         else:
-            print("No")  
-          
+            print("No")    
 
     def pwd_complex(self,password):
         with open('pwd_complexity.json','r') as file:
