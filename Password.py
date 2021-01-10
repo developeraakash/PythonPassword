@@ -3,16 +3,16 @@ import bcrypt
 import hmac
 import string
 from json import load
-from hashlib import sha512
+import hashlib 
 
 
 class Password:
     def hash_password(self, password_string):
-        hashed_password = sha512(password_string.encode('utf-8')).hexdigest()
+        hashed_password = hashlib.sha512(password_string.encode('utf-8')).hexdigest()
         return hashed_password
 
     def hash_check(self, cleartext_password, hashed_password):
-        if (hmac.compare_digest(sha512(cleartext_password.encode('utf-8')).hexdigest(), hashed_password)):
+        if (hmac.compare_digest(hashlib.sha512(cleartext_password.encode('utf-8')).hexdigest(), hashed_password)):
             print("Yes")
         else:
             print("No")  
