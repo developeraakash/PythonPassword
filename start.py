@@ -32,6 +32,8 @@ if p.pwd_complex(password) == True:
 else: 
     print("Doesn't make complexity requirements")
 
+return True == 'True'
+
 
 
 

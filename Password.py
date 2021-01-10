@@ -14,9 +14,10 @@ class Password:
         if (hmac.compare_digest(bcrypt.hashpw(cleartext_password, hashed_password), hashed_password)):
             print("Yes")
         else:
-            print("No")    
+            print("No")  
+          
 
-    def pwd_complex(password):
+    def pwd_complex(self,password):
         with open('pwd_complexity.json','r') as file:
             criteria = load(file)
             spCharater = criteria['existSpecialCharacter']
@@ -33,7 +34,7 @@ class Password:
             if len(password) < minLen:
                 return False, "Make sure your password is at least " + str(minLen) + " letters"
 
-            if len(len(password)) > maxLen:
+            if len(password) > maxLen:
                 return False, "Make sure your password is at max " + str(maxLen) + " letters"
             
             if number is True: 
