@@ -64,7 +64,7 @@ class Password:
                 return False, "Make sure to enter allowed charaters"
                 
             else:
-                return True
+                return True, "Success"
         return "Hello,I am a bug"
         
 
