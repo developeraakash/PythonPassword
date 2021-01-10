@@ -1,6 +1,6 @@
 from User import User
 from Password import *
-from hashlib import sha256
+
 
 #Example to trigger a sonar vulnerability
 #import socket
