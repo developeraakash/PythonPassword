@@ -23,12 +23,12 @@ p=Password()
 
 if p.pwd_complex(password) == True:
     password = b"bobo"
-    #hashed_password = p.hash_password(password)
+    hashed_password = p.hash_password(password)
 
-    user1.set_password(password)
+    user1.set_password(hashed_password)
     hashed_password = user1.get_password()
 
-    #p.hash_check(password, hashed_password)
+    p.hash_check(password, hashed_password)
 else: 
     print("Doesn't make complexity requirements")
 
